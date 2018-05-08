@@ -1,9 +1,9 @@
 class StoredBookmarks
 
-STOREDBOOKMARKS = [ ]
+LIBRARY = [ ]
 
   def all
-    STOREDBOOKMARKS
+    LIBRARY
   end
 
 end
