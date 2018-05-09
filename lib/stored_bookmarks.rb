@@ -1,9 +1,19 @@
+require 'pg'
+
 class StoredBookmarks
 
-LIBRARY = ['https://www.youtube.com', 'https://www.google.com', 'https://www.makersacademy.com' ]
-
   def all
-    LIBRARY
+
+    begin
+
+      connect = PG.connect :dbname => 'bookmark_manager', :user => 'anderscodes'
+
+      result = connect.exec "SELECT * FROM bookmarks"
+
+      result.map{ |row| row['url']  }
+
+    end
+
   end
 
 end
