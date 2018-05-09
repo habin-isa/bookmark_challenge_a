@@ -2,7 +2,7 @@ require './lib/stored_bookmarks'
 
 describe StoredBookmarks do
 
-subject(:stored_bookmarks) { described_class.new }
+subject(:stored_bookmarks) { described_class }
 
   describe '#all' do
     it 'should return all saved bookmarks' do

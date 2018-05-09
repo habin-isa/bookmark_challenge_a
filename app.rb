@@ -4,7 +4,7 @@ require './lib/stored_bookmarks'
 class Bookmarks < Sinatra::Base
 
   get '/' do
-    @bookmark = StoredBookmarks.new
+    @bookmark = StoredBookmarks.all
   erb :index
   end
 
