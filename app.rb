@@ -8,4 +8,9 @@ class Bookmarks < Sinatra::Base
   erb :index
   end
 
+  post '/form' do
+    StoredBookmarks.add(params[:bookmark])
+    redirect('/')
+  end
+
 end

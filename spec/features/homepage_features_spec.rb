@@ -12,4 +12,11 @@ feature 'Homepage' do
     expect(page).to have_content 'https://www.google.com'
     expect(page).to have_content 'https://www.makersacademy.com'
   end
+
+  scenario 'New bookmarks should be added' do
+    visit('/')
+    fill_in 'bookmark', with: 'https://www.msnnews.co.uk'
+    click_button 'Enscribe'
+    expect(page).to have_content 'https://www.msnnews.co.uk'
+  end
 end
