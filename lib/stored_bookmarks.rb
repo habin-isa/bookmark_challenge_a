@@ -1,4 +1,5 @@
 require 'pg'
+require 'uri'
 
 class StoredBookmarks
 
@@ -17,8 +18,12 @@ class StoredBookmarks
   end
 
   def self.add(new_bookmark)
-    enviroment
-    @connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{new_bookmark}');")
+      enviroment
+      @connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{new_bookmark}');")
+  end
+
+  def self.url_check(url)
+    url =~ /\A#{URI::regexp(['http', 'https'])}\z/
   end
 
 
