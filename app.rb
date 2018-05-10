@@ -13,7 +13,7 @@ register Sinatra::Flash
   end
 
   post '/form' do
-    flash[:notice] = 'This is not U R (ea) L (ife)' unless StoredBookmarks.add(params['bookmark'])
+    flash[:notice] = 'This is not U R (ea) L (ife)' unless StoredBookmarks.add(params['bookmark'], params['title'])
     redirect('/')
   end
 

@@ -12,8 +12,8 @@ subject(:stored_bookmarks) { described_class }
 
   describe '.add' do
     it 'should add a bookmark to the stored bookmarks' do
-      stored_bookmarks.add('http://www.stackoverflow.com')
-      expect(stored_bookmarks.all).to include('http://www.stackoverflow.com')
+      stored_bookmarks.add('http://www.stackoverflow.com', 'stackoverflow')
+      expect(stored_bookmarks.all).to include('stackoverflow')
     end
   end
 end

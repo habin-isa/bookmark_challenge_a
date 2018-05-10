@@ -14,13 +14,13 @@ class StoredBookmarks
   def self.all
     enviroment
     result = @connect.exec "SELECT * FROM bookmarks"
-    result.map{ |row| row['url']  }
+    result.map{ |row| row['title']  }
   end
 
-  def self.add(new_bookmark)
-    return false unless url_check(new_bookmark) != nil
+  def self.add(bookmark, title)
+    return false unless url_check(bookmark) != nil
       enviroment
-      @connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{new_bookmark}');")
+      @connect.exec("INSERT INTO bookmarks(url, title) VALUES('#{bookmark}', '#{title}');")
   end
 
   def self.url_check(url)
