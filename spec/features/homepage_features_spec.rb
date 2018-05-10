@@ -24,7 +24,6 @@ feature 'Homepage' do
     visit('/')
     fill_in('bookmark', :with => 'Hello')
     click_button 'Enscribe'
-    save_and_open_page
     expect(page).to have_content 'This is not a real URL'
   end
 end
