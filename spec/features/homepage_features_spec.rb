@@ -13,17 +13,19 @@ feature 'Homepage' do
     expect(page).to have_content 'https://www.makersacademy.com'
   end
 
-  scenario 'New bookmarks should be added' do
+  scenario 'Valid bookmarks added and shown, no error raised' do
     visit('/')
     fill_in 'bookmark', with: 'https://www.msnnews.co.uk'
     click_button 'Enscribe'
     expect(page).to have_content 'https://www.msnnews.co.uk'
+    expect(page).not_to have_content 'This is not U R (ea) L (ife)'
   end
 
   scenario 'Raises error if user does not submit a real URL' do
     visit('/')
     fill_in('bookmark', :with => 'Hello')
     click_button 'Enscribe'
-    expect(page).to have_content 'This is not a real URL'
+    expect(page).to have_content 'This is not U R (ea) L (ife)'
   end
+
 end

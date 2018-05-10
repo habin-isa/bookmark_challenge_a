@@ -14,7 +14,7 @@ register Sinatra::Flash
 
   post '/form' do
     if StoredBookmarks.url_check(params['bookmark']) == nil
-      flash[:notice] = 'This is not a real URL'
+      flash[:notice] = 'This is not U R (ea) L (ife)'
     else
     StoredBookmarks.add(params['bookmark'])
   end

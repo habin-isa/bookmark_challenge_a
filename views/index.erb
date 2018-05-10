@@ -1,11 +1,13 @@
-<h1> Welcome to Gerking's Bookmark Manager </h1>
-<h2> <%= @bookmark %> </h2>
+<h1 style='color: darkslategrey; font-family: sans-serif; font-variant: small-caps'> Welcome to Gerking's Bookmark Manager </h1>
+<h2 style='color: blue; font-family: sans-serif; font-variant: small-caps; text-align: center'> <%= @bookmark %> </h2>
 
-<form action='/form' method='post'>
+<form style='color: darkslategrey; font-family: sans-serif' action='/form' method='post'>
   Add your bookmark if you dare:
-  <input type='text' name='bookmark'>
+  <input style='color: white; background-color: palevioletred' type='text' name='bookmark'>
   <br></br>
-  <button>Enscribe</button>
+  <button style='float: right; font-size: 66px; padding: 54px; background-color: chartreuse; font-variant: small-caps; font-family: sans-serif'>Enscribe</button>
 </form>
 
+<h1 style='color: red; font-family: sans-serif; font-size: 320px; font-variant: small-caps'>
 <%= flash[:notice] %>
+</h1>
