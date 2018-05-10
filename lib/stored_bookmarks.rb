@@ -18,6 +18,7 @@ class StoredBookmarks
   end
 
   def self.add(new_bookmark)
+    return false unless url_check(new_bookmark) != nil
       enviroment
       @connect.exec("INSERT INTO bookmarks VALUES(DEFAULT, '#{new_bookmark}');")
   end
