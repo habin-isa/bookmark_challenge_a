@@ -16,4 +16,11 @@ subject(:stored_bookmarks) { described_class }
       expect(stored_bookmarks.all).to include('stackoverflow')
     end
   end
+
+  describe '.delete' do
+    it 'should delte bookmark when button is clicked' do
+      stored_bookmarks.delete('http://www.stackoverflow.com', 'stackoverflow')
+      expect(stored_bookmarks.all).to_not include('stackoverflow')
+    end
+  end
 end

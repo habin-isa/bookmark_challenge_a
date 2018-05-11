@@ -25,9 +25,16 @@ feature 'Homepage' do
   scenario 'Raises error if user does not submit a real URL' do
     visit('/')
     fill_in('bookmark', :with => 'Hello')
-    fill_in 'title', with: 'I like shovels' 
+    fill_in 'title', with: 'I like shovels'
     click_button 'Enscribe'
     expect(page).to have_content 'This is not U R (ea) L (ife)'
   end
 
+  scenario 'Deletes a bookmark' do
+    visit('/')
+    fill_in('bookmark', :with => 'https://www.msnnews.co.uk')
+    fill_in 'title', with: 'MSN'
+    click_button 'Rid it!'
+    expect(page).to_not have_content 'MSN'
+  end
 end
